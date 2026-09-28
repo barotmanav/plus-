@@ -1,0 +1,1 @@
+# CampusPulse Django Project Package

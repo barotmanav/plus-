@@ -1,0 +1,10 @@
+Django>=5.0.0,<5.2.0
+djangorestframework>=3.14.0
+django-cors-headers>=4.3.0
+psycopg2-binary>=2.9.9
+firebase-admin>=6.4.0
+python-dotenv>=1.0.0
+drf-spectacular>=0.27.0
+channels>=4.0.0
+daphne>=4.0.0
+requests>=2.31.0

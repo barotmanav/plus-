@@ -1,0 +1,6 @@
+{
+  "name": "CampusPulse - Smart College Notice Board & Instant Alert System",
+  "description": "Production-grade college notice board and instant alert platform delivering targeted notices to students via web and mobile push notifications with role-based CR workflows and emergency broadcast.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
