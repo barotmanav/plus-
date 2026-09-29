@@ -34,6 +34,8 @@ import { useApp } from '../context/AppContext';
 import { playNotificationSound } from '../utils/audio';
 import { AuthView } from './AuthView';
 import { Notice, RoleType } from '../types';
+import campusHeroImg from '../assets/images/campuspulse_hero_campus_1790572044945.jpg';
+import controlRoomImg from '../assets/images/campuspulse_control_room_1790572058163.jpg';
 
 interface LandingPageProps {
   onEnterDashboard?: () => void;
@@ -649,9 +651,19 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
                 <img
-                  src="/src/assets/images/campuspulse_hero_campus_1790572044945.jpg"
+                  src={campusHeroImg}
                   alt="Modern university technological campus"
-                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (!target.dataset.triedFallback) {
+                      target.dataset.triedFallback = '1';
+                      target.src = '/images/campuspulse_hero_campus.jpg';
+                    } else if (target.dataset.triedFallback === '1') {
+                      target.dataset.triedFallback = '2';
+                      target.src = 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop';
+                    }
+                  }}
                   className="w-full h-80 sm:h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
@@ -1011,9 +1023,19 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
                 <img
-                  src="/src/assets/images/campuspulse_control_room_1790572058163.jpg"
+                  src={controlRoomImg}
                   alt="High-tech university administration control room"
-                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (!target.dataset.triedFallback) {
+                      target.dataset.triedFallback = '1';
+                      target.src = '/images/campuspulse_control_room.jpg';
+                    } else if (target.dataset.triedFallback === '1') {
+                      target.dataset.triedFallback = '2';
+                      target.src = 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop';
+                    }
+                  }}
                   className="w-full h-80 sm:h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
